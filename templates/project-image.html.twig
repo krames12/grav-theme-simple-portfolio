@@ -1,0 +1,15 @@
+{% embed 'partials/base.html.twig' %}
+
+  
+  {% block content %}
+
+  <h2>{{ page.title }}</h2>
+   {{ page.content }}
+
+  {% embed 'partials/projects-like-this.html.twig' with {'project': page.parent} %}
+
+  {% endembed %}
+
+  {% endblock %}
+
+{% endembed %}

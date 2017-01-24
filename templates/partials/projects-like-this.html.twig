@@ -1,0 +1,15 @@
+<div class="projects-like-this">
+
+  {% set parentCategory = page.taxonomy.category[0] %}
+  {{ dump(parentCategory) }}
+  {% for post in page.find('/home').children %}
+    <p>
+    {% for category in post.taxonomy.category %}
+      {% if category == parentCategory %}
+        <span>{{ category }}</span>
+      {% endif %}
+    {% endfor %}
+    </p>
+  {% endfor %}
+
+</div>

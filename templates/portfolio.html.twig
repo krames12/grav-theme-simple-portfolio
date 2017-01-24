@@ -1,0 +1,36 @@
+{% embed 'partials/base.html.twig' %}
+
+  {% set collection = page.collection() %}
+  {% block content %}
+
+  <div class="project-nav text-center">
+    <ul>
+      <li class="project-tag selected" id="application">Application</li>
+      <li class="project-tag" id="3d">3D Art</li>
+      <li class="project-tag" id="animation">Animation</li>
+      <li class="project-tag" id="graphic">Graphic Design</li>
+    </ul>
+  </div>
+
+  <div class="project-wrapper">
+    {% for child in collection %}
+
+      <div class="project-single-container 
+        {% for category in child.taxonomy.category %}
+          {{ category }}
+        {% endfor %}
+      ">
+        <a href=" {{ child.url }} ">
+          <div class="project-overlay text-center">
+            <p class="project-name">{{ child.title }}</p>
+          </div>
+        </a>
+        <img src="http://placekitten.com/g/150/150" alt="" class="project-picture">
+      </div>
+
+    {% endfor %}
+  </div>
+
+  {% endblock %}
+
+{% endembed %}

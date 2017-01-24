@@ -1,0 +1,263 @@
+/* Variable Declaration */
+/* Core Stuff */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #606d6e;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #454B4D;
+  margin: 5px; }
+
+a {
+  color: #1F8CD6;
+  text-decoration: none; }
+  a:hover {
+    color: #175E91; }
+
+pre {
+  background: #F0F0F0;
+  margin: 1rem 0;
+  border-radius: 2px; }
+
+blockquote {
+  border-left: 10px solid #eee;
+  margin: 0;
+  padding: 0 2rem; }
+
+/* Utility Classes */
+.wrapper {
+  margin: 0 3rem; }
+
+.padding {
+  padding: 1rem 1rem; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+.selected {
+  background-color: #95C37F; }
+
+/* Content Styling */
+#site-wrapper {
+  max-width: 900px;
+  min-width: 320px;
+  margin: 0 auto; }
+
+.header {
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid #95C37F;
+  height: 75px;
+  line-height: 75px;
+  position: fixed;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  top: 0;
+  z-index: 1000; }
+  .header .padding {
+    padding: 1em 0; }
+  .header a {
+    color: black; }
+  .header .logo {
+    font-size: 1.7em;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 75px;
+    transition: all 0.2s ease-in-out; }
+    @media only screen and (max-width: 640px) {
+      .header .logo {
+        font-size: 1.3em; } }
+    .header .logo i {
+      padding: 10px;
+      background-color: #95C37F;
+      color: white;
+      border-radius: 50%;
+      margin-right: 5px; }
+
+#body {
+  margin: 75px 3em 0px 3em; }
+  @media only screen and (max-width: 530px) {
+    #body {
+      margin: 75px 0 0 0; } }
+
+.footer {
+  background-color: #eee; }
+
+/* Menu Settings */
+.main-nav #nav-container {
+  letter-spacing: -1em;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+  @media only screen and (max-width: 640px) {
+    .main-nav #nav-container {
+      position: absolute;
+      max-height: 0px;
+      overflow: hidden;
+      left: 0;
+      top: 70px;
+      max-width: 900px;
+      width: 100%;
+      color: white;
+      background-color: #95C37F;
+      text-align: center;
+      transition: max-height 0.2s ease-in-out; } }
+  .main-nav #nav-container.active {
+    padding-bottom: 25px;
+    max-height: calc(55px * 4); }
+  .main-nav #nav-container li {
+    display: inline-block;
+    letter-spacing: normal;
+    height: 100%;
+    width: auto;
+    transition: all 0.2s ease-in-out;
+    position: relative; }
+    @media only screen and (max-width: 640px) {
+      .main-nav #nav-container li {
+        display: block; } }
+    .main-nav #nav-container li a {
+      position: relative;
+      line-height: 45px;
+      padding: 0 20px;
+      white-space: nowrap; }
+    .main-nav #nav-container li:hover {
+      background-color: #95C37F; }
+      @media only screen and (max-width: 640px) {
+        .main-nav #nav-container li:hover {
+          background-color: #7AA068; } }
+    .main-nav #nav-container li.selected a {
+      color: white; }
+.main-nav #nav-toggle {
+  display: none;
+  line-height: 75px;
+  cursor: pointer; }
+  @media only screen and (max-width: 640px) {
+    .main-nav #nav-toggle {
+      display: block; } }
+@media only screen and (max-width: 640px) {
+  .main-nav {
+    margin-bottom: 5px; } }
+
+/* Portfolio Layout */
+/* Project Navigation */
+.project-nav {
+  z-index: 1;
+  border-bottom: 1px solid rgba(96, 109, 110, 0.5);
+  margin: 0 auto;
+  width: 100%; }
+  @media only screen and (max-width: 530px) {
+    .project-nav {
+      width: 100%; } }
+  .project-nav ul {
+    padding: 0; }
+  .project-nav .project-tag {
+    list-style: none;
+    display: inline-block;
+    padding: 0.5em;
+    transition: all 0.2s ease-in-out; }
+    @media only screen and (max-width: 530px) {
+      .project-nav .project-tag {
+        display: block;
+        width: 100%; } }
+    .project-nav .project-tag:hover {
+      cursor: pointer;
+      background-color: #95C37F;
+      color: white; }
+    .project-nav .project-tag.selected {
+      color: white; }
+
+/* Project Grid */
+.project-wrapper {
+  width: 90%;
+  margin: 5px auto;
+  display: flex;
+  flex-grow: right;
+  flex-wrap: wrap;
+  flex-direction: row;
+  transition: width 0.2s ease-in-out; }
+  @media only screen and (max-width: 700px) {
+    .project-wrapper {
+      width: 100%; } }
+  .project-wrapper .project-single-container {
+    display: none;
+    position: relative;
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    transition: all 0.2s ease-in-out; }
+    .project-wrapper .project-single-container.show {
+      display: inline-block; }
+    .project-wrapper .project-single-container .project-overlay {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      line-height: 150px;
+      background-color: #95C37F;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+      z-index: 4; }
+      .project-wrapper .project-single-container .project-overlay:hover {
+        opacity: 0.8; }
+      .project-wrapper .project-single-container .project-overlay .project-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+        color: white;
+        font-size: 1.2em; }
+    .project-wrapper .project-single-container .project-picture {
+      position: absolute;
+      top: 0;
+      z-index: 1; }
+
+/* Footer */
+.social-links {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 3rem 0;
+  margin: 10px; }
+
+.social {
+  color: black;
+  margin: 0.5rem;
+  text-decoration: none;
+  line-height: 2rem;
+  transition: all 0.3s cubic-bezier(0.42, 0, 0.54, 2.16); }
+  .social:hover {
+    transform: scale(1.1); }
+
+.twitter {
+  color: #00aced; }
+
+.linkedin {
+  color: #007bb6; }
+
+.vimeo {
+  color: #1ab7ea; }
+
+.dribbble {
+  color: #ea4c89; }
+
+/*# sourceMappingURL=custom.css.map */
